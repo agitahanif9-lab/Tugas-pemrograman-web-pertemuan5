@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: 'Poppins', sans-serif; 
+  background: #FFF2B4;
+  color: #15370D;
+}
+
+/* Container galeri dengan susunan awal 1 kolom untuk layar HP */
+.galeri {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px; /* jarak antar gambar */
+}
+
+.galeri figure {
+  margin: 0;
+  padding: 16px;
+  background: #ffffff;
+  border: 2px solid #E5CD82;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.galeri img {
+  width: 100%;          /* gambar mengikuti lebar kolom */
+  aspect-ratio: 1 / 1;  /* semua logo berukuran seragam */
+  object-fit: contain;  /* logo utuh, tidak terpotong */
+  display: block;
+}
+
+.galeri figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #15370D;
+}
+
+/* Menjadikan 2 kolom pada tablet */
+@media (min-width: 600px) {
+  .galeri {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Menjadikan 3 kolom sama lebar pada desktop */
+@media (min-width: 992px) {
+  .galeri {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom sama lebar */
+  }
+}
